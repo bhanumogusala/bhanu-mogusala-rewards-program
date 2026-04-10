@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Lock files — auto-generated, formatting them is pointless noise
+package-lock.json
+yarn.lock
+
+# Generated or vendored assets
+public/
