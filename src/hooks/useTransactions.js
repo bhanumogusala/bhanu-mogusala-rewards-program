@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { fetchTransactions } from '../services/transactionService';
+import { fetchTransactions } from '../services/transactionsService';
 
 function useTransactions() {
   const [transactions, setTransactions] = useState([]);
