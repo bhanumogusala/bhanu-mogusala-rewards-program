@@ -36,7 +36,6 @@ function CustomerCard({ customer }) {
         </div>
       </header>
 
-      {/* ── Monthly breakdown ── */}
       <section className="customer-card__months" aria-label="Monthly breakdown">
         {sortedMonthKeys.length === 0 ? (
           <p className="customer-card__empty">No transactions recorded.</p>

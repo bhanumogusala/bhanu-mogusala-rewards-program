@@ -1,17 +1,21 @@
 
 export function calculatePoints(amount) {
+
+  const MIN_THRESHOLD = 50;
+  const MAX_THRESHOLD = 100;
+
   if (typeof amount !== 'number' || !isFinite(amount) || amount < 0) {
     return 0;
   }
 
   let rawPoints = 0;
 
-  if (amount <= 50) {
+  if (amount <= MIN_THRESHOLD) {
     rawPoints = 0;
-  } else if (amount <= 100) {
-    rawPoints = (amount - 50) * 1;
+  } else if (amount <= MAX_THRESHOLD) {
+    rawPoints = (amount - MIN_THRESHOLD) * 1;
   } else {
-    rawPoints = 50 + (amount - 100) * 2;
+    rawPoints = (MAX_THRESHOLD - MIN_THRESHOLD) + (amount - MAX_THRESHOLD) * 2;
   }
 
   return Math.round(rawPoints);

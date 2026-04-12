@@ -1,16 +1,39 @@
-# React + Vite
+# Rewards Program UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React app that calculates customer reward points from transaction history over a three-month period.
 
-Currently, two official plugins are available:
+## What it does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Simulates an asynchronous API call to fetch transactions
+- Calculates points per transaction using the retailer rules:
+  - 2 points for every dollar spent over $100
+  - 1 point for every dollar spent between $50 and $100
+- Aggregates rewards per customer, per month, and totals
+- Shows loading and error states
 
-## React Compiler
+## Assumptions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- I assumed fractional dollar amounts should be rounded to the nearest whole dollar before calculating points.
+  - Example: `121.75` is treated as `122`
+  - Example: `321.30` is treated as `321`
 
-## Expanding the ESLint configuration
+## How to run
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Notes
+
+- No Redux is used.
+- Data is mocked inside `src/data/transactions.js`.
+- A custom hook handles loading, error, and fetched data state.
+
+## Next enhancements
+
+For better scalability, I would consider:
+- pagination for large transaction lists
+- virtualization for rendering long tables efficiently
+
+This gives a clean, maintainable starting point while keeping the core reward calculation logic separate and easy to test.
