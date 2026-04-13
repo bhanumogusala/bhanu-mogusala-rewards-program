@@ -1,6 +1,5 @@
 import { getMonthKey, formatMonthLabel, groupByCustomerAndMonth } from './transactionHelpers';
 
-
 describe('getMonthKey', () => {
   test('returns YYYY-MM for a standard ISO date', () =>
     expect(getMonthKey('2024-01-15')).toBe('2024-01'));
@@ -14,7 +13,6 @@ describe('getMonthKey', () => {
     expect(getMonthKey('2024-03-05')).toBe('2024-03'));
 });
 
-
 describe('formatMonthLabel', () => {
   test('formats January correctly', () => expect(formatMonthLabel('2024-01')).toBe('January 2024'));
 
@@ -24,7 +22,6 @@ describe('formatMonthLabel', () => {
   test('formats a mid-year month correctly', () =>
     expect(formatMonthLabel('2024-06')).toBe('June 2024'));
 });
-
 
 describe('groupByCustomerAndMonth', () => {
   test('returns empty array for empty input', () =>
@@ -36,7 +33,6 @@ describe('groupByCustomerAndMonth', () => {
   test('returns empty array for undefined input', () =>
     expect(groupByCustomerAndMonth(undefined)).toEqual([]));
 
-  
   describe('single transaction', () => {
     const txns = [
       { id: 'txn-1', customerId: 'c1', customerName: 'Alice', amount: 120, date: '2024-01-15' },
@@ -59,7 +55,6 @@ describe('groupByCustomerAndMonth', () => {
     });
   });
 
-  
   describe('multiple customers', () => {
     const txns = [
       { id: 't1', customerId: 'c1', customerName: 'Bob', amount: 150, date: '2024-01-10' },

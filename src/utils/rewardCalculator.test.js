@@ -1,6 +1,5 @@
 import { calculatePoints, isValidTransaction } from './rewardCalculator';
 
-
 describe('calculatePoints', () => {
   describe('amounts $50 and below → 0 points', () => {
     test('returns 0 for $0', () => expect(calculatePoints(0)).toBe(0));
