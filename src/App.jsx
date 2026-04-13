@@ -4,6 +4,7 @@ import { groupByCustomerAndMonth } from './utils/transactionHelpers';
 import RewardsTable from './components/RewardsTable';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorMessage from './components/ErrorMessage';
+import TrophyIcon from './components/TrophyIcon/TrophyIcon';
 import './App.css';
 
 function App() {
@@ -13,18 +14,15 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app__header" role="banner">
+      <header className="app__header">
         <div className="app__header-inner">
-          <span className="app__logo" aria-hidden="true">
-            🏆
-          </span>
+          <TrophyIcon size={48} className="app__logo" />
           <div>
             <h1 className="app__title">Retailer Rewards Program</h1>
             <p className="app__subtitle">Track customer points earned over the last three months</p>
           </div>
         </div>
       </header>
-
       <main className="app__main" id="main-content">
         {loading && <LoadingSpinner />}
         {error && <ErrorMessage message={error} />}

@@ -20,20 +20,16 @@ function MonthlyBreakdown({ label, points, transactions, customerId, monthKey })
           <thead>
             <tr>
               <th scope="col">Transaction ID</th>
-              <th scope="col" className="text-right">
-                Amount
-              </th>
-              <th scope="col" className="text-right">
-                Points
-              </th>
+              <th scope="col">Amount</th>
+              <th scope="col">Points</th>
             </tr>
           </thead>
           <tbody>
             {transactions.map((txn) => (
               <tr key={txn.id}>
                 <td className="monthly-breakdown__txn-id">{txn.id}</td>
-                <td className="text-right">${txn.amount.toFixed(2)}</td>
-                <td className="text-right">
+                <td>${txn.amount.toFixed(2)}</td>
+                <td>
                   <span
                     className={`monthly-breakdown__points-badge ${
                       txn.points > 0 ? 'monthly-breakdown__points-badge--positive' : ''

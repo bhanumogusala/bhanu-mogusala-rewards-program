@@ -22,7 +22,6 @@ function CustomerCard({ customer }) {
         </div>
         <div className="customer-card__meta">
           <h2 className="customer-card__name">{customerName}</h2>
-          <p className="customer-card__subtitle">Customer ID: {customerId}</p>
         </div>
         <div className="customer-card__total-badge">
           <span className="customer-card__total-label">Total</span>

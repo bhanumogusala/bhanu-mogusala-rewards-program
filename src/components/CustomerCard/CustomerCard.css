@@ -19,8 +19,15 @@
   align-items: center;
   gap: 1rem;
   padding: 1.25rem 1.5rem;
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #0073D1 0%, #003057 100%);
   color: #fff;
+  transition: background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 48, 87, 0.15);
+}
+
+.customer-card__header:hover {
+  background: linear-gradient(135deg, #0084e6 0%, #002240 100%);
+  box-shadow: 0 6px 16px rgba(0, 48, 87, 0.25);
 }
 
 .customer-card__avatar {
@@ -49,6 +56,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #fff;
 }
 
 .customer-card__subtitle {

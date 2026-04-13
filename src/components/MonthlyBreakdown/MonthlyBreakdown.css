@@ -43,18 +43,28 @@
   border-bottom: 1px solid #f3f4f6;
 }
 
+.monthly-breakdown__table th:nth-child(2),
+.monthly-breakdown__table th:nth-child(3) {
+  text-align: right;
+}
+
 .monthly-breakdown__table td {
   padding: 0.35rem 0.5rem;
   color: #374151;
   border-bottom: 1px solid #f9fafb;
 }
 
+.monthly-breakdown__table td:nth-child(2),
+.monthly-breakdown__table td:nth-child(3) {
+  text-align: right;
+}
+
 .monthly-breakdown__table tr:last-child td {
   border-bottom: none;
 }
 
-.text-right {
-  text-align: right;
+.monthly-breakdown__text-center {
+  text-align: center;
 }
 
 .monthly-breakdown__txn-id {
