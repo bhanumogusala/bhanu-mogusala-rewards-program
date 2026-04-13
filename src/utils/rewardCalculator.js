@@ -6,17 +6,18 @@ export function calculatePoints(amount) {
     return 0;
   }
 
+  const amountSpent = Math.floor(amount);
   let rawPoints = 0;
 
-  if (amount <= MIN_THRESHOLD) {
+  if (amountSpent <= MIN_THRESHOLD) {
     rawPoints = 0;
-  } else if (amount <= MAX_THRESHOLD) {
-    rawPoints = (amount - MIN_THRESHOLD) * 1;
+  } else if (amountSpent <= MAX_THRESHOLD) {
+    rawPoints = amountSpent - MIN_THRESHOLD;
   } else {
-    rawPoints = MAX_THRESHOLD - MIN_THRESHOLD + (amount - MAX_THRESHOLD) * 2;
+    rawPoints = MAX_THRESHOLD - MIN_THRESHOLD + (amountSpent - MAX_THRESHOLD) * 2;
   }
 
-  return Math.round(rawPoints);
+  return rawPoints;
 }
 
 export function isValidTransaction(transaction) {

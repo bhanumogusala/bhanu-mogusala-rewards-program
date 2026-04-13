@@ -13,9 +13,9 @@ This is a simple React app that calculates customer reward points from transacti
 
 ## Assumptions
 
-- I assumed fractional dollar amounts should be rounded to the nearest whole dollar before calculating points.
-  - Example: `121.75` is treated as `122`
-  - Example: `321.30` is treated as `321`
+- I assumed fractional dollar amounts should be truncated to whole dollars before calculating points.
+  - Example: `121.75` is treated as `121`
+  - Example: `1.30` is treated as `1`
 
 ## How to run
 
