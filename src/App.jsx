@@ -4,6 +4,7 @@ import { groupByCustomerAndMonth } from './utils/transactionHelpers';
 import RewardsTable from './components/RewardsTable';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorMessage from './components/ErrorMessage';
+import ErrorBoundary from './components/ErrorBoundary';
 import TrophyIcon from './components/TrophyIcon/TrophyIcon';
 import './App.css';
 
@@ -26,7 +27,11 @@ function App() {
       <main className="app__main" id="main-content">
         {loading && <LoadingSpinner />}
         {error && <ErrorMessage message={error} />}
-        {!loading && !error && <RewardsTable customers={customers} />}
+        {!loading && !error && (
+          <ErrorBoundary>
+            <RewardsTable customers={customers} />
+          </ErrorBoundary>
+        )}
       </main>
 
       <footer className="app__footer" role="contentinfo">
