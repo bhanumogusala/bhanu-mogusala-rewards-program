@@ -1,6 +1,4 @@
-
 export function calculatePoints(amount) {
-
   const MIN_THRESHOLD = 50;
   const MAX_THRESHOLD = 100;
 
@@ -15,7 +13,7 @@ export function calculatePoints(amount) {
   } else if (amount <= MAX_THRESHOLD) {
     rawPoints = (amount - MIN_THRESHOLD) * 1;
   } else {
-    rawPoints = (MAX_THRESHOLD - MIN_THRESHOLD) + (amount - MAX_THRESHOLD) * 2;
+    rawPoints = MAX_THRESHOLD - MIN_THRESHOLD + (amount - MAX_THRESHOLD) * 2;
   }
 
   return Math.round(rawPoints);

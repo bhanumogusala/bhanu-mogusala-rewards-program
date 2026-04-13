@@ -18,11 +18,7 @@ function useTransactions() {
       }
     } catch (err) {
       if (isMountedRef.current) {
-        setError(
-          err instanceof Error
-            ? err
-            : new Error('An unexpected error occurred.')
-        );
+        setError(err instanceof Error ? err : new Error('An unexpected error occurred.'));
       }
     } finally {
       if (isMountedRef.current) {

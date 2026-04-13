@@ -6,7 +6,6 @@ import LoadingSpinner from './components/LoadingSpinner';
 import ErrorMessage from './components/ErrorMessage';
 import './App.css';
 
-
 function App() {
   const { transactions, loading, error } = useTransactions();
 

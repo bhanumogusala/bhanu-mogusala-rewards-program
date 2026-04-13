@@ -42,9 +42,7 @@ export async function fetchTransactions({
   await new Promise((resolve) => setTimeout(resolve, delay));
 
   if (simulateFailure) {
-    throw new TransactionServiceError(
-      'Failed to fetch transactions. Please try again later.'
-    );
+    throw new TransactionServiceError('Failed to fetch transactions. Please try again later.');
   }
 
   return deduplicateById(data).filter((txn) => {
